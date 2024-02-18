@@ -1,15 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { SidebarProvider } from './context/sidebarContext';
-import { MealProvider } from './context/mealContext';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from "./store/Store";
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <SidebarProvider>
-    <MealProvider>
-      <App />
-    </MealProvider>
-  </SidebarProvider>
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+
+  document.getElementById("root")
 );
-
